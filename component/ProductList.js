@@ -41,18 +41,18 @@ function injectListStylesOnce() {
 
     .productGrid {
       display: grid;
-      gap: 16px;
+      gap: 10px;
       align-items: start;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .productGrid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 1000px) {
       .productGrid {
         grid-template-columns: 1fr;
       }

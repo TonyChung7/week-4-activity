@@ -13,6 +13,7 @@ function injectStylesOnce() {
   style.textContent = `
     .productCard {
       width: 320px;
+      height: 400px;
       background: #fff;
       border: 1px solid #e6e6e6;
       border-radius: 12px;
@@ -26,7 +27,7 @@ function injectStylesOnce() {
       background: #fafafa;
       display: flex;
       justify-content: center;
-      padding: 16px 16px 8px;
+      padding: 8px
     }
 
     .productImage {
@@ -37,13 +38,13 @@ function injectStylesOnce() {
     }
 
     .productBody {
-      padding: 12px 16px 16px;
+      padding: 12px;
     }
 
     .productBadge {
       display: inline-block;
       font-size: 12px;
-      padding: 4px 8px;
+      padding: 4px;
       border-radius: 999px;
       background: #fef3c7;
       color: #92400e;
@@ -186,8 +187,15 @@ export default function Product({ product }) {
   }, []);
 
   const { title, image, price, meta = {} } = product || {};
-  const { author, rating, reviews, format, deliveryText, arriveText, badgeText } =
-    meta || {};
+  const {
+    author,
+    rating,
+    reviews,
+    format,
+    deliveryText,
+    arriveText,
+    badgeText,
+  } = meta || {};
 
   const { dollars, cents } = useMemo(() => parsePrice(price), [price]);
 
@@ -218,7 +226,9 @@ export default function Product({ product }) {
         {rating || reviews ? (
           <div className="productRatingRow">
             {rating ? <StarRating rating={rating} /> : null}
-            {reviews ? <span className="productReviews">({reviews})</span> : null}
+            {reviews ? (
+              <span className="productReviews">({reviews})</span>
+            ) : null}
           </div>
         ) : null}
 
