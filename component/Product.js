@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useMemo } from "react";
 
 const STYLE_ID = "product-card-styles-v1";
